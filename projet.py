@@ -43,12 +43,12 @@ def affiche_portrait_de_phase(limite = 10):
 
     #  changer la densité le long d'une ligne de champ
     ax0 = fig.add_subplot(gs[0, 0])
-    ax0.streamplot(X, Y, U, V, density=[0.5, 1])
+    ax0.streamplot(X, Y, U, V, density=[0.5, 1], color = "orange")
     ax0.set_title('Variation de la densité')
 
     # changer la couleur le long d'une ligne
     ax1 = fig.add_subplot(gs[0, 1])
-    strm = ax1.streamplot(X, Y, U, V, color=U, linewidth=2, cmap='Purples')
+    strm = ax1.streamplot(X, Y, U, V, color=U, linewidth=2, cmap='gist_heat')
     fig.colorbar(strm.lines)
     ax1.set_title('Variation de la couleur')
 
