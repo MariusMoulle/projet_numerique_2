@@ -4,16 +4,24 @@ dx2/dt = -x2*(gamma-delta*x1)
 """
 
 import numpy as np
+import math as mp
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
+import precedent_projet
 
 
 # définition des constantes
 alpha, beta, gamma, delta = 2/3, 4/3, 1, 1
 
+# définition des fonctions
 def f(x1, x2):
     return np.array([x1*(alpha - beta*x2), -x2*(gamma - delta*x1)])
 
+def H(x1, x2):
+    return delta*x1 - gamma* mp.log(x1) + beta*x2 - alpha*mp.log(x2)
+
+
+# définition des réponses aux questions
 def affiche_champ_de_vecteur(limite = 10, couleur = "orange"):
 
     x = np.linspace(0,limite,limite + 1)
@@ -60,5 +68,14 @@ def affiche_portrait_de_phase(limite = 10):
 
     plt.tight_layout()
     plt.show()
+
+
+# d'après le premier projet numérique
+# def affiche_courbes_niveaux(x0 = alpha/beta, y0 = gamma/delta):
+#     tableau = precedent_projet.level_curve_question_8(H, x0, y0)
+#     plt.plot(x0, y0, color = 'blue')
+#     plt.plot(tableau[0], tableau[1], color='red')
+#     plt.show()
+
 
 affiche_portrait_de_phase()
