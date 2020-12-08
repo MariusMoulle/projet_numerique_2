@@ -39,7 +39,7 @@ def affiche_portrait_de_phase(limite = 10):
 
     
     fig = plt.figure(figsize=(7, 9))
-    gs = gridspec.GridSpec(nrows=3, ncols=2, height_ratios=[1, 1, 2])
+    gs = gridspec.GridSpec(nrows=2, ncols=2, height_ratios=[1, 1])
 
     #  changer la densité le long d'une ligne de champ
     ax0 = fig.add_subplot(gs[0, 0])
@@ -61,3 +61,4 @@ def affiche_portrait_de_phase(limite = 10):
     plt.tight_layout()
     plt.show()
 
+affiche_portrait_de_phase()
