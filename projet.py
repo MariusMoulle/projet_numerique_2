@@ -78,4 +78,19 @@ def affiche_courbes_niveaux(x0 = alpha/beta, y0 = gamma/delta):
     plt.show()
 
 
+def solve_euler_explicit(f, x0, y0, dt, t0, tf):
+    # on a x_(n+1) = x_n + dt*f(x_n)
+
+    n = int((tf - t0)/dt)
+
+    res = np.empty(n, dtype = float)
+
+    res[0] = x0
+
+    for i in range(1, n):
+        res[i] = res[i-1] + dt*f(res[i - 1])
+
+    return res
+
+
 affiche_courbes_niveaux()
