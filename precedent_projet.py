@@ -225,7 +225,7 @@ def gamma(t,P1,P2,u1,u2):
 tache 7
 '''
 
-def level_curve_question_8(f, x0, y0, oversampling=1, delta=0.1, N=N, eps=eps):
+def courbe_niveau(f, x0, y0, oversampling=1, delta=0.1, N=N, eps=eps):
     if (oversampling == 1):
         return(level_curve_question_7(f, x0, y0))
     else : # on utilise le squelette de la fonction level_curve
